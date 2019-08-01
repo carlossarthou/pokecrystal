@@ -216,7 +216,7 @@ ClairText_GiveDragonbreathDragonDen:
 
 NotifyReceiveDragonbreath:
 	text "<PLAYER> received"
-	line "TM24 DRAGONBREATH."
+	line "TM24."
 	done
 
 ClairText_DescribeDragonbreathDragonDen:
