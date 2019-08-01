@@ -7367,19 +7367,20 @@ GiveExperiencePoints:
 	ld [wTempByteValue], a
 	ld hl, wEnemyMonBaseStats
 	ld c, wEnemyMonEnd - wEnemyMonBaseStats
-.base_stat_division_loop
-	xor a
-	ldh [hDividend + 0], a
-	ld a, [hl]
-	ldh [hDividend + 1], a
-	ld a, [wTempByteValue]
-	ldh [hDivisor], a
-	ld b, 2
-	call Divide
-	ldh a, [hQuotient + 3]
-	ld [hli], a
-	dec c
-	jr nz, .base_stat_division_loop
+;; Disable base stat division for experience gain
+;.base_stat_division_loop
+;	xor a
+;	ldh [hDividend + 0], a
+;	ld a, [hl]
+;	ldh [hDividend + 1], a
+;	ld a, [wTempByteValue]
+;	ldh [hDivisor], a
+;	ld b, 2
+;	call Divide
+;	ldh a, [hQuotient + 3]
+;	ld [hli], a
+;	dec c
+;	jr nz, .base_stat_division_loop
 	ret
 
 BoostExp:
