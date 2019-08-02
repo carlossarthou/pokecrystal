@@ -62,6 +62,7 @@ LancesRoomLanceScript:
 	dontrestartmapmusic
 	reloadmapafterbattle
 	setevent EVENT_BEAT_CHAMPION_LANCE
+	callasm EnableGSBallScene
 	opentext
 	writetext LanceBattleAfterText
 	waitbutton
@@ -127,6 +128,13 @@ LancesRoomLanceScript:
 	pause 15
 	warpfacing UP, HALL_OF_FAME, 4, 13
 	end
+
+EnableGSBallScene:
+	ld a, BANK(sMobileEventIndex)
+	call GetSRAMBank
+	ld a, MOBILE_EVENT_OBJECT_GS_BALL
+	ld [sMobileEventIndex], a
+	jp CloseSRAM
 
 LancesRoom_EnterMovement:
 	step UP
